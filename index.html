@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>은성이의웹사이트</title>
+    <style>
+        body {
+            user-select: none;
+        }
+
+        .colcen {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .colleft {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .colrowcen {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .rowcen {
+            display: flex;
+        }
+
+        .canvasstyle {
+            width: 50vw;
+            height: 80vh;
+        }
+
+        .pretty-button {
+            background-color: #4f46e5;
+            width : 200px;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+            margin-left:20px;
+        }
+
+        .sliderlabel{
+            width:70px;
+            text-align:center;
+            display:inline-block;
+        }
+    </style>
+</head>
+
+<body class="colleft">
+    <div class="colcen">
+        <h1>물체 던지기 실험</h1>
+    </div>
+    <div class="rowcen">
+        <canvas id="canvas" class="canvasstyle" style="border:7px solid black;"></canvas>
+        <div class="colrowcen" style="width:500px">
+            <label>
+                <span class="sliderlabel">각도</span>
+                <input type="range" min="-75" max="75" value="0" step="15" style="width:30%" id="theta">
+            </label>
+            <label>
+                <span class="sliderlabel">높이</span>
+                <input type="range" min="0" max="300" value="100" step="1" style="width:30%" id="H">
+            </label>
+            <label>
+                <span class="sliderlabel">초기속력</span>
+                <input type="range" min="1" max="30" value="5" step="1" style="width:30%" id="v0">
+            </label>
+            <button class="pretty-button" id="btn">발사</button>
+            </div>
+
+        </div>
+        <script src="physicsengine.js"></script>
+</body>
+
+</html>
